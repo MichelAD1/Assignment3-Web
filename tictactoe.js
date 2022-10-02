@@ -54,6 +54,7 @@ function minimax(isMaximizing,depth){ //implementing the minimax algorithm
             }
         }
         return bestScore;
+
     }else{
         let bestScore=Infinity;
         let score;

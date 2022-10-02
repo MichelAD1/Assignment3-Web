@@ -6,12 +6,14 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .spot{
   width: 30%;
   height: 30%;
   margin: 11px;
   float: right;
 }
+
 .piece{
   width: max-content;
   height: max-content;
