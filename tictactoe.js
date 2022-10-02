@@ -71,3 +71,37 @@ function minimax(isMaximizing,depth){ //implementing the minimax algorithm
     }
 }
 
+function bot(){ //method for the ai to play
+    let bestScore=-Infinity;
+    let bestMove;
+    let score;
+    for(let i=0;i<board.length;i++){
+        if(board[i]==-1){
+            board[i]=0;
+            score=minimax(true,0);
+            board[i]=-1
+            if(score>bestScore){
+                bestScore=score;
+                bestMove=i; 
+            }
+        }
+    }
+    board[bestMove]=0;
+    
+    document.getElementById(bestMove+1).innerHTML="<img class='piece' src='Assets/yellow.png'>"
+    let winner=checkWinner();
+        if(winner==-2){
+            //its a tie
+            document.getElementById("status").innerHTML="Tie!";
+            game_status=0;
+        }else if(winner==0){
+            // Computer wins
+            document.getElementById("status").innerHTML="Yellow won";
+            game_status=0;
+        }else if(winner==1){
+            //player wins
+            document.getElementById("status").innerHTML="Red won";
+            game_status=0;
+        }
+}
+
