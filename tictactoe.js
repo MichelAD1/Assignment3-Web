@@ -28,6 +28,7 @@ function checkWinner(){ //method to check for the winner
     
 }
 
+
 function minimax(isMaximizing,depth){ //implementing the minimax algorithm
     let winner=checkWinner();
     if(winner==-2){
@@ -71,6 +72,7 @@ function minimax(isMaximizing,depth){ //implementing the minimax algorithm
     }
 }
 
+
 function bot(){ //method for the ai to play
     let bestScore=-Infinity;
     let bestMove;
@@ -103,5 +105,31 @@ function bot(){ //method for the ai to play
             document.getElementById("status").innerHTML="Red won";
             game_status=0;
         }
+}
+
+
+function makemove(index){
+    if(board[index-1]==-1 && game_status){
+        board[index-1]=1;
+        document.getElementById(index).innerHTML="<img class='piece' src='Assets/red.png'>"
+        let iswinner=checkWinner();
+        if(iswinner==-2){
+            //its a tie
+            document.getElementById("status").innerHTML="Tie!";
+            game_status=0;
+        }else if(iswinner==0){
+            // Computer wins
+            document.getElementById("status").innerHTML="Yellow won";
+            game_status=0;
+        }else if(iswinner==1){
+            //player wins
+            document.getElementById("status").innerHTML="Red won";
+            game_status=0;
+        }
+        else{
+            bot();
+        }
+    }
+    
 }
 
