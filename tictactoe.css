@@ -1,0 +1,17 @@
+#game {
+	
+	margin: auto;
+	position: center;
+	height: 800px;
+	width: 900px;
+}
+img {
+    align-items: center;
+    justify-content: center;
+
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  
+  }
