@@ -1,17 +1,19 @@
-#game {
-	
-	margin: auto;
-	position: center;
-	height: 800px;
-	width: 900px;
-}
-img {
-    align-items: center;
-    justify-content: center;
-
-    display: block;
+.board{
+  background-image: url("Assets/board.png");
+  width: 820px;
+  height: 822px;
+  display:block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
-  
-  }
+}
+.spot{
+  width: 30%;
+  height: 30%;
+  margin: 11px;
+  float: right;
+}
+.piece{
+  width: max-content;
+  height: max-content;
+  position: relative;
+}

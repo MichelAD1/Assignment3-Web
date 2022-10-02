@@ -6,9 +6,20 @@
 	</head>
 
 	<body>
-		<div id="game">
-			<img src = "Assets/board.png" alt="">
+		<div class="board" >
+			<div class="spot" id="1" onclick="makemove(this.id)"></div>
+			<div class="spot" id="2" onclick="makemove(this.id)"></div>
+			<div  class="spot" id="3" onclick="makemove(this.id)"></div>
+	
+			<div class="spot" id="4" onclick="makemove(this.id)"></div>
+			<div class="spot" id="5" onclick="makemove(this.id)"></div>
+			<div class="spot" id="6" onclick="makemove(this.id)"></div>
+	
+			<div class="spot" id="7" onclick="makemove(this.id)"></div>
+			<div class="spot" id="8" onclick="makemove(this.id)"></div>
+			<div class="spot" id="9" onclick="makemove(this.id)"></div>
 		</div>
+		<h2 id="status"></h2>
 		<script src="tictactoe.js" type="text/javascript" ></script>
 	</body>
 </html>
