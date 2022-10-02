@@ -27,3 +27,47 @@ function checkWinner(){ //method to check for the winner
     }
     
 }
+
+function minimax(isMaximizing,depth){ //implementing the minimax algorithm
+    let winner=checkWinner();
+    if(winner==-2){
+        return 0;
+    }else if(winner==0){
+        return 1;
+    }else if(winner==1){
+        return -1;
+    }
+
+    if(isMaximizing){
+        let bestScore=-Infinity;
+        let score;
+        for(let i=0;i<board.length;i++){
+            if(board[i]==-1){
+                board[i]=1;
+                score=minimax(false,0);
+                board[i]=-1
+                if(score>bestScore){
+                    bestScore=score;
+                    
+                }
+            }
+        }
+        return bestScore;
+    }else{
+        let bestScore=Infinity;
+        let score;
+        for(let i=0;i<board.length;i++){
+            if(board[i]==-1){
+                board[i]=0;
+                score=minimax(true,0);
+                board[i]=-1
+                if(score<bestScore){
+                    bestScore=score;
+                    
+                }
+            }
+        }
+        return bestScore;
+    }
+}
+
